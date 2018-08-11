@@ -6,8 +6,8 @@ test('should add two numbers', () => {
 });
 
 test('should async add two number', (done) => {
-    utils.asyncAdd(4, 3, (sum) => {
-        expect(sum).toBe(7);
+    utils.asyncAdd(4, 4, (sum) => {
+        expect(sum).toBe(8);
         done();
     });
 });
