@@ -1,23 +1,26 @@
 const utils = require("./utility");
 
-test('should add two numbers', () => {
-    var res = utils.add(11, 33);
-    expect(res).toBe(44);
-});
+describe('Testing Async functions', () => {
+    it('should async add two number', (done) => {
+        utils.asyncAdd(4, 4, (sum) => {
+            expect(sum).toBe(8);
+            done();
+        });
+    });
 
-test('should async add two number', (done) => {
-    utils.asyncAdd(4, 4, (sum) => {
-        expect(sum).toBe(8);
-        done();
+    it('should add two numbers', () => {
+        var res = utils.add(11, 33);
+        expect(res).toBe(44);
+    });
+
+
+    it('should square a number', () => {
+        var res = utils.square(3);
+        expect(res).toBe(9);
     });
 });
 
-test('should square a number', () => {
-    var res = utils.square(3);
-    expect(res).toBe(9);
-});
-
-test('should split first name and last name', () => {
+it('should split first name and last name', () => {
     var user = {
         location: "Basildon",
         age: 38
